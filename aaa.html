@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>叮当猫</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        .box{
+            width: 500px;
+            height: 500px;
+            margin: 100px auto;
+        }
+        .top{
+            width: 200px;
+            height: 200px;
+            background-color: #00A0D0;
+            border-radius: 50%;
+            position: relative;
+        }
+        .lian{
+            width: 150px;
+            height: 130px;
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            top:60px;
+            left:25px;
+        }
+        .yan-left,.yan-right{
+            width: 40px;
+            height: 50px;
+            border-radius: 20px;
+            border:black solid 1px;
+            background-color: #fff;
+            position: absolute;
+        }
+        .yan-left{
+            top:40px;
+            left:60px;
+        }
+        .yan-right{
+            top:40px;
+            left:100px;
+        }
+        .dian-left,.dian-right{
+            width: 10px;
+            height: 10px;
+            background-color: black;
+            border-radius: 50%;
+            position: absolute;
+            top:20px;
+        }
+        .dian-left{
+            left:22px;
+        }
+        .dian-right{
+            left:8px;
+        }
+        .bi{
+            width: 20px;
+            height: 20px;
+            border:black solid 1px;
+            background-color: #C03000;
+            border-radius: 9px;
+            position: absolute;
+            top:84px;
+            left:90px;
+
+        }
+        .xian{
+            width: 2px;
+            height: 60px;
+            background-color: black;
+            position: absolute;
+            top:105px;
+            left:100px;
+            z-index: 99;
+        }
+        .xian-left1,.xian-left2,.xian-left3{
+            width: 30px;
+            height: 1px;
+            background-color: black;
+            position: absolute;
+            left:45px;
+            z-index: 99;
+        }
+        .xian-left1{
+            top:110px;
+            transform: skew(20deg,20deg);
+        }
+        .xian-left2{
+            top:123px;
+        }
+        .xian-left3{
+            top:136px;
+            transform: skew(-20deg,-20deg);
+        }
+        .xian-right1,.xian-right2,.xian-right3{
+            width: 30px;
+            height: 1px;
+            background-color: black;
+            position: absolute;
+            right:45px;
+            z-index: 99;
+        }
+        .xian-right1{
+            top:110px;
+            transform: skew(20deg,-20deg);
+        }
+        .xian-right2{
+            top:123px;
+        }
+        .xian-right3{
+            top:136px;
+            transform: skew(-20deg,20deg);
+        }
+        .xiao{
+            position: absolute;
+            top:116px;
+            left: 55px;
+        }
+        .xiao1{
+            width:90px;
+            height: 50px;
+            border-bottom: 2px solid black;
+            border-radius: 50%;
+        }
+        .xiao2{
+            width: 90px;
+            height: 20px;
+            background-color: #fff;
+            position: absolute;
+            top:15px;
+        }
+        .shen{
+            position: relative;
+        }
+        .bo{
+            width: 120px;
+            height: 15px;
+            border-radius: 20px;
+            background-color: #C03000;
+            position: absolute;
+            top:-15px;
+            left:40px;
+            z-index: 999;
+            border: 1px solid black;
+        }
+        .yuan{
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: #fff;
+            position: absolute;
+            left:40px;
+            top:-15px;
+            border: 1px solid black;
+            z-index: 99;
+        }
+        .yuan1{
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: #ebf41c;
+            position: absolute;
+            top:-10px;
+            left: 87px;
+            z-index: 99999;
+            border: 1px solid black;
+        }
+        .yuan2{
+            width: 100px;
+            height: 50px;
+            border-radius: 0 0 50px 50px;
+            border: black solid 1px;
+            position: absolute;
+            top:60px;
+            left:10px;
+        }
+        .ti{
+            width: 150px;
+            height: 130px;
+            background-color: #00A0D0;
+            position: absolute;
+            left:26px;
+            border-radius: 20px 20px 0 0;
+            z-index: 99;
+        }
+        .ge-left , .ge-right{
+            width: 78px;
+            height: 20px;
+            background-color: #00A0D0;
+            position: absolute;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+
+        }
+        .ge-left{
+            top:8px;
+            left:-12px;
+            transform: skew(30deg,-30deg);
+        }
+        .ge-right{
+            top:9px;
+            left:140px;
+            transform: skew(-30deg,30deg);
+        }
+        .shou-left,.shou-right{
+            width: 26px;
+            height: 26px;
+            background-color: #fff;
+            border-radius: 50%;
+            border: 1px solid black;
+            position: absolute;
+        }
+        .shou-left{
+            top:25px;
+            left:-22px;
+        }
+        .shou-right{
+            top:26px;
+            left:199px;
+        }
+        .yuan3{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            position: absolute;
+            background-color: #fff;
+            top:120px;
+            left:90px;
+            z-index: 999;
+            border-top: 1px solid black;
+        }
+        .jiao-left , .jiao-right{
+            width: 70px;
+            height: 20px;
+            z-index: 999;
+            background-color: #fff;
+            border-radius: 10px 5px 5px 5px;
+            border: 1px solid black;
+            position: absolute;
+            top:125px;
+
+        }
+        .jiao-left{
+            left: 20px;
+        }
+        .jiao-right{
+            left: 105px;
+        }
+        .l,.r{
+            width: 1px;
+            height: 100px;
+            background-color: black;
+            position: absolute;
+            top:28px;
+            z-index: 999;
+        }
+        .l{
+            left:26px;
+        }
+        .r{
+            left:174px;
+        }
+        .xx1{
+            width: 22px;
+            height: 2px;
+            background-color: black;
+
+            position: absolute;
+            top:5px;
+            left: 1px;
+        }
+        .xx2{
+            width: 24px;
+            height: 2px;
+            background-color: black;
+            position: absolute;
+            top:8px;
+            left: 1px;
+        }
+        .d{
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: black;
+            position: absolute;
+            top:12px;
+            left: 9px;
+        }
+        .xx3{
+            width: 3px;
+            height: 8px;
+            background-color: black;
+            position: absolute;
+            top:17px;
+            left: 11px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="top">
+        <div class="lian"></div>
+        <div class="yan-left">
+            <div class="dian-left"></div>
+        </div>
+        <div class="yan-right">
+            <div class="dian-right"></div>
+        </div>
+        <div class="bi"></div>
+        <div class="xian"></div>
+        <div class="xian-left1"></div>
+        <div class="xian-left2"></div>
+        <div class="xian-left3"></div>
+        <div class="xian-right1"></div>
+        <div class="xian-right2"></div>
+        <div class="xian-right3"></div>
+        <div class="xiao">
+            <div class="xiao1"></div>
+            <div class="xiao2"></div>
+        </div>
+    </div>
+    <div class="shen">
+        <div class="bo"></div>
+        <div class="ti"></div>
+        <div class="yuan1">
+            <div class="xx1"></div>
+            <div class="xx2"></div>
+            <div class="d"></div>
+            <div class="xx3"></div>
+        </div>
+        <div class="yuan">
+
+            <div class="yuan2"></div>
+        </div>
+        <div class="ge-left"></div>
+        <div class="ge-right"></div>
+        <div class="shou-left"></div>
+        <div class="shou-right"></div>
+        <div class="yuan3"></div>
+        <div class="jiao-left"></div>
+        <div class="jiao-right"></div>
+        <div class="l"></div>
+        <div class="r"></div>
+    </div>
+
+</div>
+
+</body>
+</html>
